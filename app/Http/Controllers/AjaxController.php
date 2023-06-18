@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class AjaxController extends Controller
 {
@@ -15,11 +16,11 @@ class AjaxController extends Controller
      */
     public function index(Request $request)
     {
-
+        $user = Auth::user();
         if ($request->ajax()) {
 
-            $data = Car::latest()->get();
-
+            $data = Car::latest()->get()
+                ->where('user_id', '=', $user->id);
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
@@ -45,6 +46,7 @@ class AjaxController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         Car::updateOrCreate([
             'id' => $request->product_id
         ],
@@ -56,7 +58,8 @@ class AjaxController extends Controller
                 'mileage' =>
                     isset($request->mileage) ? $request->mileage : null,
                 'color' =>
-                    isset($request->color) ? $request->color : null
+                    isset($request->color) ? $request->color : null,
+                'user_id' => $user->id
             ]);
 
         return response()->json(['success'=>'Product saved successfully.']);

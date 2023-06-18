@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('cars-ajax-crud', AjaxController::class);
+Route::resource('cars-ajax-crud', AjaxController::class)
+    ->middleware('auth.basic');
 
 require __DIR__.'/auth.php';
