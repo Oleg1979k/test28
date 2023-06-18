@@ -50,7 +50,9 @@ class AjaxController extends Controller
         ],
             [
                 'brand' => $request->name,
-                'model' => $request->detail
+                'model' => $request->detail,
+                'year_of_release' =>
+                    isset($request->year) ? date('Y',strtotime($request->year)): null,
             ]);
 
         return response()->json(['success'=>'Product saved successfully.']);

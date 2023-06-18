@@ -15,6 +15,6 @@ class Car extends Model
      * @return response()
      */
     protected $fillable = [
-        'brand', 'model'
+        'brand', 'model','year_of_release'
     ];
 }

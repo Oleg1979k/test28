@@ -21,8 +21,9 @@
         <thead>
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
             <th width="280px">Action</th>
         </tr>
         </thead>
@@ -51,6 +52,13 @@
                         <label class="col-sm-2 control-label">Model</label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="Enter Model" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Year of release</label>
+                        <div class="col-sm-12">
+                            <input type="month" class="form-control" id="year" name="year">
                         </div>
                     </div>
 
@@ -93,6 +101,7 @@
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'brand', name: 'brand'},
                 {data: 'model', name: 'model'},
+                {data: 'year_of_release', name:'year_of_release'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
