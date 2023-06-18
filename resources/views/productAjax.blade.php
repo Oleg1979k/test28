@@ -190,18 +190,18 @@
         $('body').on('click', '.deleteProduct', function () {
 
             var product_id = $(this).data("id");
-            confirm("Are You sure want to delete !");
-
-            $.ajax({
-                type: "DELETE",
-                url: "{{ route('cars-ajax-crud.store') }}"+'/'+product_id,
-                success: function (data) {
-                    table.draw();
-                },
-                error: function (data) {
-                    console.log('Error:', data);
-                }
-            });
+            if (confirm("Are You sure want to delete !")){
+                $.ajax({
+                    type: "DELETE",
+                    url: "{{ route('cars-ajax-crud.store') }}"+'/'+product_id,
+                    success: function (data) {
+                        table.draw();
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+            }
         });
 
     });
