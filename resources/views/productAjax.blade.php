@@ -16,7 +16,7 @@
 
 <div class="container">
     <h1>Laravel Ajax CRUD Tutorial Example - ItSolutionStuff.com</h1>
-    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Create New Product</a>
+    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Create New Car</a>
     <table class="table table-bordered data-table">
         <thead>
         <tr>
@@ -24,6 +24,8 @@
             <th>Brand</th>
             <th>Model</th>
             <th>Year</th>
+            <th>Mileage</th>
+            <th>Color</th>
             <th width="280px">Action</th>
         </tr>
         </thead>
@@ -59,6 +61,20 @@
                         <label class="col-sm-2 control-label">Year of release</label>
                         <div class="col-sm-12">
                             <input type="month" class="form-control" id="year" name="year">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Mileage</label>
+                        <div class="col-sm-12">
+                            <input type="number" class="form-control" id="mileage" name="mileage">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Color</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="color" name="color">
                         </div>
                     </div>
 
@@ -102,6 +118,8 @@
                 {data: 'brand', name: 'brand'},
                 {data: 'model', name: 'model'},
                 {data: 'year_of_release', name:'year_of_release'},
+                {data: 'mileage', 'name':'mileage'},
+                {data: 'color', 'name': 'color'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
