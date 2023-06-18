@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CarRequest;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use DataTables;
@@ -44,15 +45,15 @@ class AjaxController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         $user = Auth::user();
         Car::updateOrCreate([
             'id' => $request->product_id
         ],
             [
-                'brand' => $request->name,
-                'model' => $request->detail,
+                'brand' => $request->brand,
+                'model' => $request->model,
                 'year_of_release' =>
                     isset($request->year) ? date('Y',strtotime($request->year)): null,
                 'mileage' =>

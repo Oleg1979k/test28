@@ -46,14 +46,14 @@
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Brand</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Brand" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="brand" name="brand" placeholder="Enter Brand" value="" maxlength="50" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Model</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="Enter Model" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="model" name="model" placeholder="Enter Model" value="" maxlength="50" required="">
                         </div>
                     </div>
 
